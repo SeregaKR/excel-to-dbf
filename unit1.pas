@@ -66,24 +66,21 @@ var
   r, c: Cardinal;
   cell: PCell;
 begin
-  DbfGlobals.DefaultCreateCodePage := 1251;
-  DbfGlobals.DefaultOpenCodePage := 1251;
+  DbfGlobals.DefaultCreateCodePage := 1251; //default encoding of the dbf
+  DbfGlobals.DefaultOpenCodePage := 1251; //default encoding of the dbf
   if Dbf1.Active then Dbf1.Close;
   if FileExists(AFileName) then DeleteFile(AFileName);
 
   Dbf1.FilePathFull := ExtractFilePath(AFileName);
   Dbf1.TableName := ExtractFileName(AFileName);
   Dbf1.TableLevel := 25;  // DBase IV: 4 - most widely used; or 25 = FoxPro supports nfCurrency
-  Dbf1.LanguageID := $C9;
+  Dbf1.LanguageID := $C9; //russian language by default
   Dbf1.FieldDefs.Clear;
-  Dbf1.FieldDefs.Add('cd_lpu', ftInteger);
-  Dbf1.FieldDefs.Add('nm_lpu', ftString);
+  //below are the fields in excel
   Dbf1.FieldDefs.Add('fam', ftString);
   Dbf1.FieldDefs.Add('im', ftString);
   Dbf1.FieldDefs.Add('ot', ftString);
   Dbf1.FieldDefs.Add('dt', ftDateTime);
-  Dbf1.FieldDefs.Add('poli', ftString);
-  Dbf1.FieldDefs.Add('cd_smo', ftInteger);
   Dbf1.FieldDefs.Add('raion', ftString);
   Dbf1.FieldDefs.Add('adres', ftString);
   Dbf1.FieldDefs.Add('tel', ftString);
@@ -91,7 +88,6 @@ begin
   Dbf1.FieldDefs.Add('priznak_do', ftInteger);
   Dbf1.FieldDefs.Add('status_pm', ftInteger);
   Dbf1.FieldDefs.Add('per_pm_ut', ftInteger);
-  Dbf1.FieldDefs.Add('cd_lpuin', ftInteger);
   Dbf1.FieldDefs.Add('fname', ftString);
 
   Dbf1.CreateTable;
