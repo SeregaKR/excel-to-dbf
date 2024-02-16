@@ -1,9 +1,7 @@
 # excel-to-dbf
 Convert Excel to DBF using Lazarus FPSpreadSheet component.
 
-This is a small program to convert Excel document to DBF. This can be useful when you need to process a lot of Excel files and import them into database.
-
+This is just an experiment with Lazarus. It's a small program to convert Excel document to DBF. I used it to convert a lot of Excel files with similar structure to import them later into a database.
 My regards to user wp on the forum.
 
-
-Here ia a small program and Excel sample.
+The program and Excel sample is attached.
